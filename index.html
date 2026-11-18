@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Kiné du sport et préparateur physique, j'aide les lifters à trouver la cause de leur douleur et à resoulever lourd, sans mettre l'entraînement en pause. Suivi 100 % à distance.">
+<meta property="og:title" content="Barbell Clinic · Resoulève lourd. Sans douleur.">
+<meta property="og:description" content="Suivi kiné individuel à distance pour les lifters : diagnostic, programmation sur mesure et review vidéo chaque semaine.">
+<meta property="og:image" content="vid/jb-lift.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07110d">
+<link rel="icon" href="vid/logo-light.png">
+<title>Barbell Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: colonne éditoriale large, sections alternées clair / teinté, preuve répétée après chaque promesse */
+:root{
+  /* Univers Barbell Clinic : vert profond, halos verts, panneaux en verre dépoli. Thème sombre unique, choisi. */
+  --bg:#06120d; --bg2:#0c271d; --brand:#144433; --ink:#e8f3ee; --muted:#9ab3a8;
+  --accent:#5ccf9b; --accent-2:#23795a; --accent-ink:#04140d; --gold:#e6c46a;
+  --glass:rgba(255,255,255,.055); --glass-strong:rgba(255,255,255,.09); --line:rgba(190,255,225,.14);
+  --surface:var(--glass); --tint:rgba(20,68,51,.25);
+  --ph-bg:rgba(230,196,106,.14); --ph-line:rgba(230,196,106,.6); --ph-ink:#f1d98f;
+  --display:"Sora",ui-sans-serif,system-ui,sans-serif; --body:"Inter",ui-sans-serif,system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:radial-gradient(900px 600px at 85% -5%,rgba(20,68,51,.85),transparent 60%),radial-gradient(800px 700px at -10% 35%,rgba(35,121,90,.28),transparent 60%),radial-gradient(900px 700px at 110% 75%,rgba(20,68,51,.7),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2) 50%,var(--bg));background-attachment:fixed;background-color:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:72px}
+section.tint{background:var(--tint);border-block:1px solid rgba(190,255,225,.06)}
+.card,.guarantee,.proof,.badge,.chip,nav,.waitlist input{-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%)}
+.card,.guarantee{box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 20px 50px -20px rgba(0,0,0,.6)}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,5vw,3.3rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-.01em}
+h3{font-size:1.15rem}
+p{margin:0;max-width:65ch}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--accent)}
+.head{display:grid;gap:12px;margin-bottom:40px}
+.lead{color:var(--muted);font-size:1.1rem}
+.ph{background:var(--ph-bg);color:var(--ph-ink);border:1px dashed var(--ph-line);border-radius:4px;padding:0 .3em;font-weight:500}
+.ph-box{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);background:var(--ph-bg);color:var(--ph-ink);border:2px dashed var(--ph-line);border-radius:12px;display:grid;place-items:center;text-align:center;padding:16px;font-size:.9rem;font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 8px 30px -8px rgba(92,207,155,.45);color:var(--accent-ink);font-weight:600;text-decoration:none;padding:14px 22px;border-radius:999px;border:0;font-size:1rem}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn.ghost{background:var(--glass);box-shadow:none;color:var(--ink);border:1px solid var(--line)}
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(7,17,13,.6);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+nav .logo{font-family:var(--display);font-weight:700;display:inline-flex;align-items:center;gap:10px}
+.hero-sec{position:relative;overflow:hidden}
+.hero-photo{margin:0;position:relative;max-width:100%;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px -25px rgba(0,0,0,.7)}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.hero-photo figcaption{position:absolute;left:14px;right:14px;bottom:14px;padding:10px 14px;border-radius:12px;background:rgba(6,18,13,.55);border:1px solid var(--line);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);font-size:.85rem;color:var(--muted)}
+.hero-photo figcaption b{color:var(--ink)}
+@media (max-width:860px){.hero-photo{max-width:380px}}
+.hero-sec::after{content:"";position:absolute;right:-120px;top:-60px;width:620px;height:620px;max-width:90vw;background:url(vid/logo-big.png) center/contain no-repeat;opacity:.07;pointer-events:none;transform:rotate(-12deg)}
+.hero-sec .wrap{position:relative;z-index:1}
+nav .btn{padding:10px 16px;font-size:.9rem}
+/* banner */
+.legend{background:var(--ph-bg);color:var(--ph-ink);font-size:.85rem;border-bottom:1px solid var(--ph-line)}
+.legend .wrap{padding-block:8px}
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .85fr;gap:48px;align-items:center}
+.hero > div{min-width:0;display:grid;gap:22px}
+.hero .photo{aspect-ratio:4/5;max-width:100%}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.micro{display:flex;flex-wrap:wrap;gap:18px;color:var(--muted);font-size:.92rem}
+.stars{color:var(--gold);letter-spacing:2px}
+/* proof bar */
+.proof{border-block:1px solid var(--line);background:var(--surface)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-block:28px}
+.stat b{display:block;font-family:var(--display);font-size:1.9rem;font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:.9rem}
+/* pains */
+.pains{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 32px;padding:0;margin:0;list-style:none}
+.pains li{padding-left:28px;position:relative}
+.pains li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.about > div{min-width:0;display:grid;gap:18px}
+.about .photo{aspect-ratio:1/1}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:.85rem}
+/* offer */
+.offer{display:grid;grid-template-columns:1.1fr .9fr;gap:32px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;gap:16px;align-content:start;min-width:0}
+.card ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.fit{display:grid;gap:20px}
+.fit h3{font-size:1rem}
+.no li::marker{content:"✕  ";color:var(--muted)}
+/* steps */
+
+/* Parcours animé au scroll */
+.journey{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start;margin-top:8px}
+.jr-panel{position:sticky;top:calc(env(safe-area-inset-top,0px) + 96px);display:grid;gap:14px;padding:22px;border-radius:20px;background:var(--glass);border:1px solid var(--line);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 20px 50px -20px rgba(0,0,0,.6)}
+.jr-label{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.jr-pct{font-family:var(--display);font-weight:700;font-size:3.4rem;line-height:1;font-variant-numeric:tabular-nums}
+.jr-pct small{font-size:1.4rem;color:var(--accent);margin-left:2px}
+.jr-bar{height:10px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.jr-bar span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--accent-2),var(--accent));box-shadow:0 0 18px rgba(92,207,155,.6);transition:width .25s ease-out}
+.jr-goal{display:flex;gap:12px;align-items:center;padding:12px;border-radius:14px;border:1px dashed var(--line);transition:all .4s ease}
+.jr-goal b{display:block;font-family:var(--display);font-size:.95rem}
+.jr-goal small{color:var(--muted);font-size:.8rem}
+.jr-lock{width:34px;height:34px;flex:none;border-radius:10px;background:rgba(255,255,255,.08);position:relative}
+.jr-lock::after{content:"🔒";position:absolute;inset:0;display:grid;place-items:center;font-size:.95rem;filter:grayscale(1)}
+.jr-goal.done{border-style:solid;border-color:var(--accent);background:rgba(92,207,155,.12);box-shadow:0 0 30px -6px rgba(92,207,155,.5)}
+.jr-goal.done .jr-lock{background:var(--accent)}
+.jr-goal.done .jr-lock::after{content:"✓";filter:none;color:var(--accent-ink);font-weight:700}
+.jr-steps{list-style:none;margin:0;padding:0 0 0 64px;position:relative;display:grid;gap:28px}
+.jr-line{position:absolute;left:21px;top:22px;bottom:22px;width:2px;background:rgba(255,255,255,.1);border-radius:2px}
+.jr-line span{position:absolute;left:0;top:0;width:100%;height:0;background:linear-gradient(180deg,var(--accent),var(--accent-2));box-shadow:0 0 12px rgba(92,207,155,.7);transition:height .2s linear}
+.jr-step{position:relative;min-width:0}
+.jr-dot{position:absolute;left:-64px;top:4px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:.85rem;background:var(--bg2);border:2px solid var(--line);color:var(--muted);transition:all .4s ease}
+.jr-body{padding:20px 22px;border-radius:18px;background:var(--glass);border:1px solid var(--line);display:grid;gap:8px;transition:opacity .5s ease,transform .5s ease,border-color .4s ease;opacity:.45;transform:translateX(10px)}
+.jr-meta{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.jr-body p{color:var(--muted);font-size:.95rem}
+.jr-step.on .jr-body{opacity:1;transform:none;border-color:rgba(92,207,155,.35)}
+.jr-step.on .jr-dot{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 0 0 6px rgba(92,207,155,.15),0 0 24px rgba(92,207,155,.5)}
+.jr-step.on .jr-meta{color:var(--accent)}
+.jr-final .jr-body{background:linear-gradient(135deg,rgba(92,207,155,.14),rgba(255,255,255,.04))}
+.jr-final h3{font-size:1.4rem}
+.jr-key{display:inline-block;vertical-align:middle;margin-left:8px;font-family:var(--body);font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px;border:1px solid rgba(92,207,155,.5);color:var(--accent);background:rgba(92,207,155,.1)}
+.jr-step.on .jr-key{background:var(--accent);color:var(--accent-ink)}
+@media (max-width:860px){
+  .journey{grid-template-columns:1fr;gap:24px}
+  .jr-panel{top:calc(env(safe-area-inset-top,0px) + 100px);z-index:3;grid-template-columns:auto 1fr;align-items:center;padding:14px 16px;gap:8px 16px}
+  .jr-label{grid-column:1/-1}
+  .jr-pct{font-size:2.2rem}
+  .jr-goal{grid-column:1/-1;padding:8px 10px}
+}
+@media (max-width:560px){.jr-steps{padding-left:54px}.jr-dot{left:-54px;width:38px;height:38px}.jr-line{left:18px}}
+@media (prefers-reduced-motion:reduce){.jr-body,.jr-dot,.jr-bar span,.jr-line span,.jr-goal{transition:none}}
+.no-js .jr-body{opacity:1;transform:none}
+/* État final doré / cuivré */
+.jr-final.on .jr-dot{background:linear-gradient(135deg,#f3d27a,#c8834a);border-color:#e0b45a;color:#2a1a06;box-shadow:0 0 0 6px rgba(224,180,90,.18),0 0 30px rgba(224,180,90,.65)}
+.jr-final.on .jr-body{border-color:rgba(224,180,90,.55);background:linear-gradient(135deg,rgba(224,180,90,.16),rgba(200,131,74,.06));box-shadow:0 0 40px -10px rgba(224,180,90,.45)}
+.jr-final.on .jr-meta{color:#e8c06a}
+.jr-final .h-em{background:linear-gradient(90deg,#f3d27a,#c8834a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.jr-goal.done{border-color:#e0b45a;background:rgba(224,180,90,.12);box-shadow:0 0 30px -6px rgba(224,180,90,.55)}
+.jr-goal.done b{color:#f0cf7a}
+.jr-goal.done .jr-lock{background:linear-gradient(135deg,#f3d27a,#c8834a)}
+.jr-goal.done .jr-lock::after{color:#2a1a06}
+.journey.complete .jr-bar span{background:linear-gradient(90deg,#c8834a,#f3d27a);box-shadow:0 0 18px rgba(224,180,90,.7)}
+.journey.complete .jr-pct small{color:#e8c06a}
+.journey.complete .jr-pct{color:#f3d27a}
+.jr-bar span,.jr-pct,.jr-pct small{transition:background .5s ease,color .5s ease,width .25s ease-out}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;display:grid;gap:10px;align-content:start;border-top:2px solid var(--accent);padding-top:16px}
+.steps li::before{content:"Étape " counter(s);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.steps p{color:var(--muted);font-size:.95rem}
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:.9rem}
+.ba div{background:var(--glass-strong);border-radius:8px;padding:10px}
+.ba small{display:block;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;color:var(--muted)}
+.ba .after{background:var(--accent);color:var(--accent-ink)}
+.ba .after small{color:inherit;opacity:.8}
+/* testimonials */
+.video{aspect-ratio:16/9;max-width:100%;margin-bottom:24px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+blockquote{margin:0}
+.who{display:flex;gap:12px;align-items:center}
+.avatar{width:44px;height:44px;border-radius:50%;flex:none;padding:0;font-size:.6rem}
+.who small{display:block;color:var(--muted)}
+/* guarantee */
+.guarantee{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px}
+.seal{width:96px;height:96px;border-radius:50%;border:3px solid var(--gold);display:grid;place-items:center;font-family:var(--display);font-weight:700;color:var(--gold);text-align:center;font-size:.8rem;line-height:1.2}
+/* faq */
+details{border-bottom:1px solid var(--line);padding-block:18px}
+summary{cursor:pointer;font-weight:600;font-family:var(--display);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--accent);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted)}
+/* final */
+.final{background:var(--accent);color:var(--accent-ink);text-align:center}
+.final .wrap{display:grid;gap:20px;justify-items:center}
+.final p{opacity:.9}
+.final .btn{background:var(--accent-ink);color:var(--accent)}
+footer{padding-block:28px;color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+/* wins ticker */
+.ticker{overflow:hidden;background:rgba(20,68,51,.55);border-bottom:1px solid var(--line);color:var(--ink);font-size:.85rem}
+.ticker .track{display:flex;gap:40px;width:max-content;padding-block:10px;animation:scroll 110s linear infinite}
+.ticker span b{color:var(--gold)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+.h-em{font-style:italic;background:linear-gradient(90deg,var(--accent),#b9ecd2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.badge{display:inline-flex;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.85rem;width:max-content;max-width:100%}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+.wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:24px}
+.wall .ph-box{aspect-ratio:3/4;max-width:100%;font-size:.8rem}
+.profiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.demo{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.demo .ph-box{aspect-ratio:4/3;max-width:100%}
+.booking{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.booking > div{min-width:0;display:grid;gap:16px}
+.booking .ph-box{min-height:360px}
+.sessions{width:100%;border-collapse:collapse;font-size:.95rem;font-variant-numeric:tabular-nums}
+.sessions td{padding:12px 8px;border-bottom:1px solid var(--line)}
+.pill{border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:600}
+.pill.full{background:var(--tint);color:var(--muted)}
+.pill.open{background:var(--accent);color:var(--accent-ink)}
+.waitlist{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.waitlist input{flex:1 1 200px;min-width:0;padding:12px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.wall.vids .ph-box{aspect-ratio:9/16}
+.wall.vids{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - 36px) / 3.5);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch}
+.wall.vids>*{scroll-snap-align:start}
+@media (max-width:860px){.wall.vids{grid-auto-columns:44%}}
+@media (max-width:560px){.wall.vids{grid-auto-columns:72%}}
+.carousel{position:relative}
+.car-nav{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+.car-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--glass);color:var(--ink);font-size:1.1rem;cursor:pointer;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.car-nav button:hover{background:var(--glass-strong)}
+.car-nav button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.swipe-hint{font-size:.8rem;color:var(--muted);margin-right:auto;align-self:center}
+.vcard{margin:0;display:grid;gap:8px;align-content:start;min-width:0}
+.vcard video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;background:var(--ink);display:block}
+.vcard figcaption{font-size:.85rem;display:grid;gap:2px;color:var(--muted)}
+.vcard b{color:var(--ink);font-family:var(--display)}
+.big{font-family:var(--display);font-size:2.4rem;font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent);line-height:1}
+.case-img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:12px;display:block;max-width:100%}
+.case{position:relative;min-height:560px;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;border:1px solid var(--line);background:var(--bg2);box-shadow:0 24px 60px -24px rgba(0,0,0,.7);min-width:0}
+.case-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform .6s ease}
+.ph-box.case-bg{border-radius:20px;align-content:start;padding-top:40px}
+.case::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,18,13,0) 35%,rgba(6,18,13,.55) 65%,rgba(6,18,13,.9))}
+.case-fit{position:absolute;left:0;right:0;top:0;width:100%;height:auto;max-height:75%;object-fit:cover;object-position:center top;z-index:0;}
+.case-wide::before{background:linear-gradient(180deg,rgba(6,18,13,0) 68%,rgba(6,18,13,.75))}
+.case-wide .case-fit{box-shadow:0 12px 30px -10px rgba(0,0,0,.6)}
+.case:hover .case-bg{transform:scale(1.04)}
+.case-panel{position:relative;z-index:2;display:grid;gap:10px;padding:16px;border-radius:14px;background:rgba(10,30,22,.45);border:1px solid rgba(190,255,225,.18);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.case-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.case-head h3{font-size:1.3rem}
+.case-panel .msgs-head{display:grid;gap:4px;margin-top:56px}
+.msgs-head p{color:var(--muted);font-size:.9rem}
+.msgs{columns:3 260px;column-gap:16px;margin-top:20px}
+.msg{margin:0 0 16px;break-inside:avoid;padding:10px;border-radius:18px;background:var(--glass);border:1px solid var(--line);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 18px 40px -22px rgba(0,0,0,.7)}
+.msg img{display:block;width:100%;height:auto;border-radius:12px}
+.case-tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.case-row{display:grid;grid-template-columns:56px 1fr;gap:10px;align-items:start;font-size:.9rem;line-height:1.4}
+.case-row small{font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;padding:3px 0;border-radius:999px;text-align:center}
+.case-row.before small{background:rgba(255,255,255,.08);color:var(--muted)}
+.case-row.before p{color:var(--muted)}
+.case-row.after small{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.case-row.after p{color:var(--ink);font-weight:600}
+@media (prefers-reduced-motion:reduce){.case-bg{transition:none}}
+.case-tag{font-size:.8rem;color:var(--muted)}
+.cases.six,.cases.six{grid-template-columns:none!important;grid-auto-flow:column;grid-auto-columns:calc((100% - 40px) / 2.6);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch}
+.cases.six>*{scroll-snap-align:start}
+@media (max-width:860px){.cases.six{grid-auto-columns:60%}}
+@media (max-width:560px){.cases.six{grid-auto-columns:82%}}
+.cta-inline{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;margin-top:32px;color:var(--muted);font-size:.9rem}
+.timeline{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:0;border-left:2px solid var(--line)}
+.timeline li{padding:0 0 14px 18px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--display);display:block}
+.disclaimer{font-size:.8rem;color:var(--muted);margin-top:16px}
+@media (max-width:860px){
+  .wall{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .profiles,.demo,.booking{grid-template-columns:1fr}
+  .hero,.about,.offer{grid-template-columns:1fr}
+  .hero .photo{max-width:340px}
+  .proof .wrap{grid-template-columns:repeat(2,1fr)}
+  .steps,.cases,.quotes{grid-template-columns:1fr 1fr}
+  .pains{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  section{padding-block:52px}
+  .steps,.cases,.quotes{grid-template-columns:1fr}
+  .guarantee{grid-template-columns:1fr;justify-items:start}
+  nav .btn{display:none}
+}
+.nav-links{display:flex;gap:4px;align-items:center}.nav-links a{padding:8px 14px;border-radius:999px;font-size:.88rem;color:var(--muted);text-decoration:none;transition:color .2s,background .2s}.nav-links a:hover{color:var(--ink);background:rgba(255,255,255,.07)}section[id]{scroll-margin-top:72px}@media (max-width:860px){nav .wrap{flex-wrap:wrap;row-gap:6px}.nav-links{order:3;width:100%;overflow-x:auto;scrollbar-width:none;margin-inline:-8px}.nav-links::-webkit-scrollbar{display:none}.nav-links a{white-space:nowrap;padding:6px 10px;font-size:.82rem}section[id]{scroll-margin-top:110px}}
+.hero{grid-template-columns:1.25fr .75fr;gap:48px}.hero>div{gap:26px}.hero h1{font-size:clamp(2.6rem,5.8vw,4.7rem);line-height:1.02;letter-spacing:-.035em}.hero h1 .h-em{display:block}@media (min-width:861px){.hero h1 .h-l1,.hero h1 .h-em{white-space:nowrap}}.hero h1 .h-em2{opacity:.75}.hero .lead{font-size:clamp(1.08rem,1.5vw,1.3rem);line-height:1.55;max-width:36ch;color:rgba(234,244,238,.78)}.hero .cta-row .btn{padding:16px 28px;font-size:1.02rem}.hero .cta-row .btn::after{content:"→";margin-left:10px;display:inline-block;transition:transform .2s}.hero .cta-row .btn:hover::after{transform:translateX(4px)}.hero-photo{isolation:isolate}.hero figure{position:relative}.hero-sec .hero::before{content:"";position:absolute;right:4%;top:50%;width:520px;height:520px;max-width:70vw;transform:translateY(-50%);background:radial-gradient(closest-side,rgba(92,207,155,.28),transparent);filter:blur(30px);pointer-events:none;z-index:-1}@media (min-width:861px){.hero-sec{padding-block:96px 88px}}@media (max-width:860px){.hero{grid-template-columns:1fr;gap:36px}.hero .cta-row .btn{padding:14px 22px;white-space:nowrap}.hero .lead{max-width:none}}
+.req-steps{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:14px;counter-reset:rq}.req-steps li{counter-increment:rq;display:grid;grid-template-columns:36px 1fr;column-gap:14px;align-items:start}.req-steps li::before{content:counter(rq);grid-row:span 2;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:.9rem;background:rgba(92,207,155,.14);border:1px solid rgba(92,207,155,.4);color:var(--accent)}.req-steps b{font-family:var(--display)}.req-steps li>span{color:var(--muted);font-size:.95rem}.tf-wrap{display:grid;gap:10px}.tf-frame{position:relative;border-radius:20px;overflow:hidden;min-height:600px;background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 30px 60px -25px rgba(0,0,0,.7)}.tf-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.tf-ph{position:absolute;inset:0;display:grid;place-content:center;gap:10px;text-align:center;padding:24px;color:var(--muted)}.tf-ph b{color:var(--ink);font-family:var(--display);font-size:1.3rem}.tf-ph .btn{justify-self:center;margin-top:8px}.tf-ph small{opacity:.7;margin-top:6px}.tf-ico{font-size:2rem}.tf-note{font-size:.85rem;color:var(--muted);text-align:center}.tf-note a{color:var(--accent)}@media (max-width:860px){.tf-frame{min-height:620px}}
+.hero-photo::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(to top,rgba(4,14,10,.85),rgba(4,14,10,.35) 55%,transparent);pointer-events:none}.hero-photo figcaption{left:20px;right:20px;bottom:18px;padding:0;background:none;border:0;-webkit-backdrop-filter:none;backdrop-filter:none;display:grid;gap:2px;z-index:1;color:var(--ink)}.hero-photo figcaption b{font-family:var(--display);font-size:1.25rem;line-height:1.1}.hero-photo figcaption span{font-size:.88rem;color:rgba(234,244,238,.85)}.hero-photo figcaption small.cap-proof{margin-top:0}.hero-photo figcaption small{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-top:4px}
+.vcard{position:relative;border-radius:12px;overflow:hidden}.vcard .v-ov{position:absolute;inset:0;display:grid;place-items:center;padding:16px;color:var(--ink);background:linear-gradient(to top,rgba(4,14,10,.85),rgba(4,14,10,.35) 55%,rgba(4,14,10,.15));-webkit-backdrop-filter:blur(2px) saturate(110%);backdrop-filter:blur(2px) saturate(110%);transition:opacity .35s ease;cursor:pointer;font-size:inherit}.v-play{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);position:relative;box-shadow:0 10px 30px -10px rgba(0,0,0,.6)}.v-play::after{content:"";position:absolute;left:23px;top:18px;border-left:16px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent}.v-txt{position:absolute;left:16px;right:16px;bottom:16px;display:grid;gap:4px}.v-txt small{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}.v-txt b{font-size:1.35rem;line-height:1.1}.v-txt span{font-size:.86rem;line-height:1.35;color:rgba(234,244,238,.85)}@media (hover:hover){.vcard:hover .v-ov{opacity:0;pointer-events:none}}.vcard.playing .v-ov{opacity:0;pointer-events:none}
+footer a{color:inherit;text-decoration:underline;text-underline-offset:3px}footer a:hover{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+.case-sub{display:block;margin-top:3px;font-size:.62rem;letter-spacing:.06em;opacity:.65;text-align:right}
+.fit-num{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1;color:var(--accent);opacity:.9}
+.fit3 .card{position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,.05) 55%,rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.22);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 20px 40px -20px rgba(0,0,0,.6)}.fit3 .card::before{content:"";position:absolute;inset:0 0 auto 0;height:60%;background:radial-gradient(120% 80% at 20% 0%,rgba(255,255,255,.14),transparent 70%);pointer-events:none}.fit3 .card>*{position:relative}.fit3 .card h3{color:#fff}.fit3 .card p{color:rgba(255,255,255,.78)}.notfit{position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(12,48,34,.55),rgba(3,20,13,.7));border:1px solid rgba(92,207,155,.16);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 20px 40px -20px rgba(0,0,0,.7)}.notfit::before{content:"";position:absolute;inset:0 0 auto 0;height:70%;background:radial-gradient(100% 80% at 15% 0%,rgba(92,207,155,.10),transparent 70%);pointer-events:none}.notfit>*{position:relative}.notfit .no li::marker{color:#ff8a7a;font-weight:700}.notfit h3.notfit-label{font-family:var(--body);font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ff8a7a}.notfit h3{color:rgba(255,255,255,.85)}.notfit li{color:rgba(255,255,255,.6)}
+.notfit ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 40px}
+@media (max-width:860px){.notfit ul{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-label="Résultats d'athlètes accompagnés"><div class="track"><span><b>#win</b> Melvyn : compétitions nationales de force athlétique après des douleurs aux poignets et au genou</span><span><b>#win</b> Kelly : 1ʳᵉ place en bodybuilding après des douleurs au genou</span><span><b>#win</b> Marion : compétitions nationales malgré des douleurs au dos, à la hanche et aux ischios</span><span><b>#win</b> Enzo : champion de France de streetlifting, compétitions européennes et mondiales sans douleur aux coudes</span><span><b>#win</b> Émilie : 2ᵉ au championnat de France après une fracture du poignet</span><span><b>#win</b> Alex : podiums en haltérophilie après une instabilité d'épaule</span><span><b>#win</b> Jaron : compétitions de CrossFit sans douleur après une déchirure du biceps</span><span><b>#win</b> Jimmy : squat repris sans douleur de hanches</span><span><b>#win</b> Marine : retour en compétition après une fracture de la clavicule</span><span><b>#win</b> Kelya : entraînements repris sans douleur de hanche</span><span><b>#win</b> Rémy : compétitions de streetlifting sans douleur aux lombaires</span><span><b>#win</b> Sammy : ATHX Barcelone sans douleur</span><span><b>#win</b> Clara : PR au squat 3 semaines après une entorse de cheville</span><span><b>#win</b> Émile : fini les douleurs au dos et la sciatique</span><span><b>#win</b> JB : musculation reprise sans douleur au dos et aux hanches</span><span><b>#win</b> Melvyn : compétitions nationales de force athlétique après des douleurs aux poignets et au genou</span><span><b>#win</b> Kelly : 1ʳᵉ place en bodybuilding après des douleurs au genou</span><span><b>#win</b> Marion : compétitions nationales malgré des douleurs au dos, à la hanche et aux ischios</span><span><b>#win</b> Enzo : champion de France de streetlifting, compétitions européennes et mondiales sans douleur aux coudes</span><span><b>#win</b> Émilie : 2ᵉ au championnat de France après une fracture du poignet</span><span><b>#win</b> Alex : podiums en haltérophilie après une instabilité d'épaule</span><span><b>#win</b> Jaron : compétitions de CrossFit sans douleur après une déchirure du biceps</span><span><b>#win</b> Jimmy : squat repris sans douleur de hanches</span><span><b>#win</b> Marine : retour en compétition après une fracture de la clavicule</span><span><b>#win</b> Kelya : entraînements repris sans douleur de hanche</span><span><b>#win</b> Rémy : compétitions de streetlifting sans douleur aux lombaires</span><span><b>#win</b> Sammy : ATHX Barcelone sans douleur</span><span><b>#win</b> Clara : PR au squat 3 semaines après une entorse de cheville</span><span><b>#win</b> Émile : fini les douleurs au dos et la sciatique</span><span><b>#win</b> JB : musculation reprise sans douleur au dos et aux hanches</span></div></div>
+
+<nav><div class="wrap">
+  <span class="logo"><img src="vid/logo-light.png" alt="" width="28" height="28">Barbell Clinic</span>
+  <div class="nav-links"><a href="#videos">Témoignages</a><a href="#pour-qui">Pour qui</a><a href="#resultats">Résultats</a><a href="#methode">La méthode</a></div>
+  <a class="btn" href="#rdv">Faire ma demande</a>
+</div></nav>
+
+<section class="hero-sec"><div class="wrap hero">
+  <div>
+    <h1><span class="h-l1">Resoulève lourd.</span> <span class="h-em">Sans douleur.</span></h1>
+    <p class="lead">J'aide les lifters à trouver la cause de leur douleur et à resoulever lourd, sans mettre l'entraînement en pause.</p>
+    <div class="cta-row">
+      <a class="btn" href="#rdv">Faire ma demande de suivi</a>
+    </div>
+  </div>
+  <figure class="hero-photo"><img src="vid/jb-lift.jpg" alt="JB en soulevé de terre avec une barre lourdement chargée" width="880" height="1100"><figcaption><b>JB</b><span>Kiné du sport &amp; préparateur physique</span><small>9 ans d'expérience dans les sports de force et +200 athlètes soignés</small></figcaption></figure>
+</div></section>
+
+<section id="videos" style="padding-top:24px"><div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Leurs retours en vidéo</span>
+    <h2>Ils avaient mal. Ils ont <span class="h-em">repris les charges.</span></h2>
+  </div>
+  <div class="wall vids" id="vids-track"><figure class="vcard"><video src="vid/marion.mp4" poster="vid/marion-duo.jpg" controls playsinline preload="none"></video><figcaption class="v-ov"><span class="v-play" aria-hidden="true"></span><span class="v-txt"><small>Force athlétique</small><b>Marion</b><span>Douleurs au dos, à la hanche et aux ischios réglées</span></span></figcaption></figure><figure class="vcard"><video src="vid/jim.mp4" poster="vid/jim-duo.jpg" controls playsinline preload="none"></video><figcaption class="v-ov"><span class="v-play" aria-hidden="true"></span><span class="v-txt"><small>Haltérophilie</small><b>Jimmy</b><span>Douleurs aux hanches réglées</span></span></figcaption></figure><figure class="vcard"><video src="vid/melvyn.mp4" poster="vid/melvyn-duo.jpg" controls playsinline preload="none"></video><figcaption class="v-ov"><span class="v-play" aria-hidden="true"></span><span class="v-txt"><small>Force athlétique</small><b>Melvyn</b><span>Douleurs aux poignets et au genou réglées</span></span></figcaption></figure><figure class="vcard"><video src="vid/emile.mp4" poster="vid/emile-duo.jpg" controls playsinline preload="none"></video><figcaption class="v-ov"><span class="v-play" aria-hidden="true"></span><span class="v-txt"><small>Force athlétique</small><b>Émile</b><span>Douleurs au dos et sciatique réglées</span></span></figcaption></figure><figure class="vcard"><video src="vid/genou.mp4" poster="vid/genou-duo.jpg" controls playsinline preload="none"></video><figcaption class="v-ov"><span class="v-play" aria-hidden="true"></span><span class="v-txt"><small>Musculation</small><b>Kelya</b><span>Douleur à la hanche réglée</span></span></figcaption></figure><figure class="vcard"><video src="vid/hanche.mp4" poster="vid/hanche-duo.jpg" controls playsinline preload="none"></video><figcaption class="v-ov"><span class="v-play" aria-hidden="true"></span><span class="v-txt"><small>Musculation</small><b>JB</b><span>Douleurs au dos et aux hanches réglées</span></span></figcaption></figure></div>
+  <div class="car-nav"><button type="button" aria-label="Vidéo précédente" onclick="document.getElementById('vids-track').scrollBy({left:-document.getElementById('vids-track').clientWidth*0.8})">←</button><button type="button" aria-label="Vidéo suivante" onclick="document.getElementById('vids-track').scrollBy({left:document.getElementById('vids-track').clientWidth*0.8})">→</button></div>
+</div></section>
+
+<section id="pour-qui" style="padding-top:24px"><div class="wrap">
+  <div class="head"><h2>Pour qui <span class="h-em">c'est.</span></h2></div>
+  <div class="profiles fit3">
+    <div class="card"><span class="fit-num">01</span><h3>Tu pratiques un sport de force</h3><p>Powerlifting, strongman, haltérophilie, bodybuilding, streetlifting, CrossFit… Ton truc, c'est de lifter.</p></div>
+    <div class="card"><span class="fit-num">02</span><h3>Tu traînes une douleur depuis longtemps</h3><p>Depuis plusieurs semaines, des mois, voire des années, sans avoir trouvé de solution.</p></div>
+    <div class="card"><span class="fit-num">03</span><h3>Tu veux un diagnostic clair et une direction</h3><p>Pour enfin traiter ta problématique et arrêter de tester des trucs au hasard.</p></div>
+  </div>
+  <div class="card notfit" style="margin-top:20px">
+    <h3 class="notfit-label">Pas pour toi si</h3>
+    <ul class="no">
+      <li>Tu cherches un programme miracle ou des exercices magiques.</li>
+      <li>Tu refuses de remettre en question tes connaissances, tes croyances ou ta façon de faire.</li>
+      <li>Tu n'es pas prêt(e) à t'engager sur une période minimale de 3 mois.</li>
+    </ul>
+  </div>
+  
+</div></section>
+
+<section id="resultats" class="tint"><div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Résultats</span>
+    <h2>Avant, après : <span class="h-em">ce qui a changé.</span></h2>
+  </div>
+  <div class="cases six" id="cases-track" style="margin-top:40px"><article class="case"><img class="case-bg" src="vid/melvyn-photo.jpg" alt="Melvyn aux championnats de France de force athlétique, devant la barre de deadlift" loading="lazy"><div class="case-panel"><div class="case-head"><h3>Melvyn</h3><span class="case-tag">Force athlétique</span></div><div class="case-row before"><small>Avant</small><p>Des douleurs aux poignets et au genou qui l'empêchaient de s'entraîner</p></div><div class="case-row after"><small>Après</small><p>Reprise des compétitions au niveau national</p></div></div></article><article class="case"><img class="case-bg" src="vid/kelly.jpg" alt="Kelly sur scène en compétition de bodybuilding, médaille d'or au cou" loading="lazy"><div class="case-panel"><div class="case-head"><h3>Kelly</h3><span class="case-tag">Bodybuilding</span></div><div class="case-row before"><small>Avant</small><p>Des douleurs au genou qui l'empêchaient de s'entraîner</p></div><div class="case-row after"><small>Après</small><p>1ʳᵉ place en compétition dans sa catégorie</p></div></div></article><article class="case"><img class="case-bg" src="vid/marion-photo2.jpg" style="object-position:center top" alt="Marion en compétition de force athlétique sous le maillot de l'équipe de France" loading="lazy"><div class="case-panel"><div class="case-head"><h3>Marion</h3><span class="case-tag">Force athlétique</span></div><div class="case-row before"><small>Avant</small><p>Douleurs au dos, à la hanche et aux ischios</p></div><div class="case-row after"><small>Après</small><p>Reprise des compétitions nationales</p></div></div></article><article class="case"><img class="case-bg" src="vid/enzo.jpg" alt="Enzo qui crie pendant un dips lesté en compétition de streetlifting" loading="lazy" style="object-position:center 8%"><div class="case-panel"><div class="case-head"><h3>Enzo</h3><span class="case-tag">Streetlifting<span class="case-sub">Champion de France</span></span></div><div class="case-row before"><small>Avant</small><p>Douleurs aux coudes et aux épaules</p></div><div class="case-row after"><small>Après</small><p>Reprise des compétitions au niveau européen et mondial</p></div></div></article><article class="case"><img class="case-bg" src="vid/emilie.jpg" alt="Émilie en compétition de force athlétique, 47 kg, barre à 107,5 kg" loading="lazy"><div class="case-panel"><div class="case-head"><h3>Émilie</h3><span class="case-tag">Force athlétique</span></div><div class="case-row before"><small>Avant</small><p>Fracture du poignet, plus de compétition possible</p></div><div class="case-row after"><small>Après</small><p>Retour à son niveau, puis 2ᵉ place au championnat de France</p></div></div></article><article class="case"><img class="case-bg" src="vid/alex.jpg" alt="Alex en compétition d'haltérophilie, barre en position de front squat" loading="lazy"><div class="case-panel"><div class="case-head"><h3>Alex</h3><span class="case-tag">Haltérophilie</span></div><div class="case-row before"><small>Avant</small><p>Instabilité d'épaule et appréhension sous la barre</p></div><div class="case-row after"><small>Après</small><p>Podium sur ses compétitions</p></div></div></article><article class="case"><img class="case-bg" src="vid/jaron.jpg" alt="Jaron en compétition de CrossFit, barre au-dessus de la tête" loading="lazy"><div class="case-panel"><div class="case-head"><h3>Jaron</h3><span class="case-tag">CrossFit</span></div><div class="case-row before"><small>Avant</small><p>Déchirure du biceps et douleurs au poignet</p></div><div class="case-row after"><small>Après</small><p>Reprise des compétitions sans douleur</p></div></div></article><article class="case"><img class="case-bg" src="vid/jimmy-photo.jpg" alt="Jimmy en squat avec la barre chargée, dans un studio de coaching" loading="lazy" style="object-position:40% center"><div class="case-panel"><div class="case-head"><h3>Jimmy</h3><span class="case-tag">Haltérophilie</span></div><div class="case-row before"><small>Avant</small><p>Douleurs aux hanches : impossible de faire un squat à vide</p></div><div class="case-row after"><small>Après</small><p>Reprise de ces mouvements sans douleur</p></div></div></article><article class="case"><img class="case-bg" src="vid/marine.jpg" alt="Marine en compétition de CrossFit, barre au-dessus de la tête" loading="lazy"><div class="case-panel"><div class="case-head"><h3>Marine</h3><span class="case-tag">CrossFit</span></div><div class="case-row before"><small>Avant</small><p>Fracture de la clavicule</p></div><div class="case-row after"><small>Après</small><p>Retour en compétition</p></div></div></article><article class="case"><img class="case-bg" src="vid/kelya-photo.jpg" alt="Kelya en soulevé de terre à l'entraînement" loading="lazy" style="object-position:center 30%"><div class="case-panel"><div class="case-head"><h3>Kelya</h3><span class="case-tag">Musculation</span></div><div class="case-row before"><small>Avant</small><p>Douleurs à la hanche</p></div><div class="case-row after"><small>Après</small><p>Reprise des entraînements sans douleur</p></div></div></article><article class="case"><img class="case-bg" src="vid/remy-full.jpg" alt="Rémy qui crie sous la barre pendant un squat lourd" loading="lazy" style="object-position:32% top"><div class="case-panel"><div class="case-head"><h3>Rémy</h3><span class="case-tag">Streetlifting</span></div><div class="case-row before"><small>Avant</small><p>Douleurs aux lombaires sur le squat</p></div><div class="case-row after"><small>Après</small><p>Reprise des compétitions sans douleur</p></div></div></article><article class="case"><img class="case-bg" src="vid/sammy.jpg" alt="Sammy de dos sous la barre, en squat lors d'une compétition ATHX" loading="lazy" style="object-position:center 35%"><div class="case-panel"><div class="case-head"><h3>Sammy</h3><span class="case-tag">ATHX</span></div><div class="case-row before"><small>Avant</small><p>Douleurs sur tous ses lifts</p></div><div class="case-row after"><small>Après</small><p>ATHX Barcelone sans douleur</p></div></div></article><article class="case"><img class="case-bg" src="vid/clara.jpg" alt="Clara qui sourit en préparant sa ceinture lestée en compétition de streetlifting" loading="lazy" style="object-position:center 90%"><div class="case-panel"><div class="case-head"><h3>Clara</h3><span class="case-tag">Streetlifting</span></div><div class="case-row before"><small>Avant</small><p>Entorse de cheville 3 semaines avant une compétition</p></div><div class="case-row after"><small>Après</small><p>Compétition sans douleur et record personnel au squat</p></div></div></article></div>
+  <div class="car-nav"><button type="button" aria-label="Parcours précédent" onclick="document.getElementById('cases-track').scrollBy({left:-document.getElementById('cases-track').clientWidth*0.8})">←</button><button type="button" aria-label="Parcours suivant" onclick="document.getElementById('cases-track').scrollBy({left:document.getElementById('cases-track').clientWidth*0.8})">→</button></div>
+  <div class="msgs-head"><h3>Leurs messages, <span class="h-em">sans retouche.</span></h3><p>Extraits de nos échanges WhatsApp pendant le suivi.</p></div>
+  <div class="msgs"><figure class="msg"><img src="vid/msg7.jpg" alt="Message WhatsApp d'un athlète avec sa vidéo de squat à 170 kg : « Après c'est 3 mois de prog, je retrouve mon ancien PR »" loading="lazy"></figure><figure class="msg"><img src="vid/msg8.jpg" alt="Message WhatsApp d'une athlète : « Le petit terre qui s'est bien passé et qui sera plus révélateur du travail fourni », avec sa vidéo" loading="lazy"></figure><figure class="msg"><img src="vid/msg9.jpg" alt="Message WhatsApp d'un athlète : trois vidéos de squat avec la progression 200, 220, 240 kg" loading="lazy"></figure><figure class="msg"><img src="vid/msg10.jpg" alt="Message WhatsApp d'un athlète : « Regarde comme c'est beau, quelle amplitude, je tape même la pose en bas », avec sa vidéo de squat" loading="lazy"></figure><figure class="msg"><img src="vid/msg11.jpg" alt="Message WhatsApp d'un athlète : vidéo d'un épaulé-jeté à 175 kg en compétition, « La plus belle perf »" loading="lazy"></figure><figure class="msg"><img src="vid/msg12.jpg" alt="Message WhatsApp d'une athlète : « J'ai fait un PR au hang snatch (52,2 kg)… Sans douleur, rien à voir mon snatch avec avant ! »" loading="lazy"></figure><figure class="msg"><img src="vid/msg3.jpg" alt="Message WhatsApp d'un athlète : « Pour la première fois depuis 3 mois j'ai pu refaire du terre sans douleurs »" loading="lazy"></figure><figure class="msg"><img src="vid/msg6.jpg" alt="Message WhatsApp d'un athlète : « On a réussi quelque chose de vraiment bien sur mon épaule ! Les résultats sont là »" loading="lazy"></figure><figure class="msg"><img src="vid/msg1.jpg" alt="Message WhatsApp d'un athlète : « Je me sens méga bien, zéro douleur et trop d'énergie !! »" loading="lazy"></figure><figure class="msg"><img src="vid/msg4.jpg" alt="Message WhatsApp d'un athlète : « Je sens carrément moins la sciatique »" loading="lazy"></figure><figure class="msg"><img src="vid/msg2.jpg" alt="Message WhatsApp d'un athlète : « Cette semaine j'ai eu aucune douleur particulière ni à l'épaule ni au genou »" loading="lazy"></figure><figure class="msg"><img src="vid/msg5.jpg" alt="Message WhatsApp d'un athlète : « Les douleurs continuent de diminuer »" loading="lazy"></figure></div>
+</div></section>
+
+<section id="methode"><div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Comment ça marche</span>
+    <h2>La méthode Barbell Clinic, <span class="h-em">en 4 étapes.</span></h2>
+  </div>
+  <div class="journey" id="journey">
+    <aside class="jr-panel" aria-live="polite">
+      <span class="jr-label">Ta progression</span>
+      <div class="jr-pct"><span id="jr-num">0</span><small>%</small></div>
+      <div class="jr-bar" aria-hidden="true"><span id="jr-fill"></span></div>
+      <div class="jr-goal" id="jr-goal">
+        <span class="jr-lock" aria-hidden="true"></span>
+        <div><b id="jr-goal-title">Objectif à débloquer</b><small id="jr-goal-sub">Resoulever lourd, sans douleur</small></div>
+      </div>
+    </aside>
+    <ol class="jr-steps">
+      <span class="jr-line" aria-hidden="true"><span id="jr-line-fill"></span></span>
+      <li class="jr-step" data-step="1"><span class="jr-dot" aria-hidden="true"><span>01</span></span><div class="jr-body"><span class="jr-meta">Étape 01</span><h3>Appel bilan</h3><p>On s'appelle et on fait connaissance. Tu me racontes ta pratique, ton histoire et ta douleur : depuis quand, sur quels mouvements, ce que tu as déjà essayé. Je prends le temps de bien comprendre ta problématique et tes objectifs.</p></div></li><li class="jr-step" data-step="2"><span class="jr-dot" aria-hidden="true"><span>02</span></span><div class="jr-body"><span class="jr-meta">Étape 02</span><h3>Diagnostic croisé</h3><p>Je confronte notre appel bilan au bilan clinique (des tests en vidéo que tu fais en autonomie) et à près de 10 ans d'expérience à accompagner des lifters blessés. Je pose mon diagnostic qui va nous donner la direction du traitement.</p></div></li><li class="jr-step" data-step="3"><span class="jr-dot" aria-hidden="true"><span>03</span></span><div class="jr-body"><span class="jr-meta">Étape 03</span><h3>Une programmation sur mesure</h3><p>Je construis ton plan dans ton cadre (séances, durée, matériel), spécifique à ta discipline et évolutif par blocs.</p></div></li><li class="jr-step" data-step="4"><span class="jr-dot" aria-hidden="true"><span>04</span></span><div class="jr-body"><span class="jr-meta">Étape 04</span><h3>Review et échanges</h3><p>Chaque semaine, je fais une review complète : analyse vidéo de tes mouvements et de tes retours de séance. Tu sais exactement quoi corriger dès la séance suivante. Nos échanges se font sur WhatsApp.</p></div></li>
+      <li class="jr-step jr-final" data-step="5"><span class="jr-dot" aria-hidden="true"><span>✓</span></span><div class="jr-body"><span class="jr-meta">Objectif atteint</span><h3>Tu resoulèves lourd. <span class="h-em">Sans douleur.</span></h3><p>La cause est identifiée, la douleur a disparu, et tu as les leviers pour construire tes performances sur le long terme.</p></div></li>
+    </ol>
+  </div>
+</div></section>
+
+
+
+<section id="rdv"><div class="wrap booking">
+  <div>
+    <span class="eyebrow">Demande de suivi</span>
+    <h2>Fais ta demande, je te dis si je peux <span class="h-em">t'aider.</span></h2>
+    <p class="lead">Je ne prends qu'un nombre limité d'athlètes en même temps. Je lis chaque demande moi-même.</p>
+    <ol class="req-steps">
+      <li><b>Tu remplis le formulaire</b><span>Ta discipline, ta douleur, tes objectifs. Environ 3 min.</span></li>
+      <li><b>J'étudie ta demande</b><span>Je regarde si ta problématique entre dans mon champ d'action. Réponse sous 48 h.</span></li>
+      <li><b>On fait l'appel bilan</b><span>Si je peux t'aider, je te recontacte pour planifier l'appel.</span></li>
+    </ol>
+  </div>
+  <div class="tf-wrap">
+    <div class="tf-frame" id="tf-form">
+      <iframe src="https://form.typeform.com/to/iGmHQqSn?typeform-embed=embed-widget" title="Demande de suivi Barbell Clinic" allow="camera; microphone; autoplay; encrypted-media; fullscreen"></iframe>
+    </div>
+    <p class="tf-note">Le formulaire ne s'affiche pas ? <a href="https://form.typeform.com/to/iGmHQqSn" target="_blank" rel="noopener">Ouvre-le dans un nouvel onglet</a></p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Barbell Clinic · Jean-Baptiste, kinésithérapeute du sport · Instagram @barbell.clinic</span>
+  <span><a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a> · <a href="confidentialite.html">Confidentialité</a> · Les résultats sont individuels et le suivi ne remplace pas un avis médical.</span>
+</div></footer>
+
+<script>
+(function(){
+  var root=document.getElementById('journey'); if(!root) return;
+  var steps=[].slice.call(root.querySelectorAll('.jr-step'));
+  var num=document.getElementById('jr-num'), fill=document.getElementById('jr-fill'), line=document.getElementById('jr-line-fill');
+  var goal=document.getElementById('jr-goal'), gt=document.getElementById('jr-goal-title');
+  var list=root.querySelector('.jr-steps');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lineBox=root.querySelector('.jr-line');
+  function sizeLine(){var lr=list.getBoundingClientRect(); var fd=steps[steps.length-1].querySelector('.jr-dot').getBoundingClientRect(); var fd0=steps[0].querySelector('.jr-dot').getBoundingClientRect(); lineBox.style.top=(fd0.top+fd0.height/2-lr.top)+'px'; lineBox.style.bottom='auto'; lineBox.style.height=(fd.top+fd.height/2-(fd0.top+fd0.height/2))+'px';}
+  function update(){
+    sizeLine();
+    var vh=window.innerHeight, trigger=vh*0.62, r=list.getBoundingClientRect();
+    var p=(trigger-r.top)/(r.height-40); p=Math.max(0,Math.min(1,p));
+    if(reduce) p=1;
+    var lit=0;
+    steps.forEach(function(li){var t=li.getBoundingClientRect().top; var on=reduce||t<trigger; li.classList.toggle('on',on); if(on&&!li.classList.contains('jr-final')) lit++;});
+    var finalOn=steps[steps.length-1].classList.contains('on');
+    var cum=[0,20,50,75,90,100];
+    var ys=steps.map(function(li){var d=li.querySelector('.jr-dot').getBoundingClientRect();return d.top+d.height/2;});
+    var pct=0;
+    if(reduce||finalOn){pct=100;}
+    else if(trigger>=ys[0]){
+      for(var i=0;i<ys.length-1;i++){ if(trigger>=ys[i]&&trigger<ys[i+1]){ var f=(trigger-ys[i])/(ys[i+1]-ys[i]); pct=cum[i+1]+(cum[i+2]-cum[i+1])*f*0.6; break; } }
+    }
+    pct=Math.round(pct);
+    num.textContent=pct; fill.style.width=pct+'%'; line.style.height=(p*100)+'%';
+    goal.classList.toggle('done',finalOn); root.classList.toggle('complete',finalOn); gt.textContent=finalOn?'Objectif réussi':'Objectif à débloquer';
+  }
+  var ticking=false;
+  function onScroll(){ if(!ticking){ticking=true; requestAnimationFrame(function(){ticking=false; update();});} }
+  window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll);
+  update();
+})();
+</script>
+<script>
+document.querySelectorAll('.vcard').forEach(function(c){var v=c.querySelector('video'),o=c.querySelector('.v-ov');if(!v||!o)return;
+o.addEventListener('click',function(){c.classList.add('playing');v.play().catch(function(){});});
+v.addEventListener('play',function(){c.classList.add('playing');document.querySelectorAll('.vcard video').forEach(function(x){if(x!==v)x.pause();});});
+v.addEventListener('ended',function(){c.classList.remove('playing');});});
+</script>
+</body>
+</html>
